@@ -1,0 +1,59 @@
+.row{
+  display: flex;
+}
+
+.piece{
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  background: url("https://pbs.twimg.com/profile_images/1439909077111300104/BC-oP9Wk_400x400.jpg");
+  background-size: 300px 300px;
+}
+
+#celebration{
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+#reset{ position: absolute; }
+
+/* 
+#x1 {
+  background-position: left 0 top 0;
+}
+
+#x2 {
+  background-position: left 200px top 0;
+}
+
+#x3 {
+  background-position: left 400px top 0;
+}
+
+#x4 {
+  background-position: left 0 top 200px;
+}
+
+#x5 {
+  background-position: left 200px top 200px;
+}
+
+#x6 {
+  background-position: left 400px top 200px;
+}
+
+#x7 {
+  background-position: left 0 top 400px;
+}
+
+#x8 {
+  background-position: left 200px top 400px;
+}
+
+#x9 {
+  background-position: left 400px top 400px;
+}
+ */
+

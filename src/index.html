@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>8 Puzzle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="board">
+    <div class="row">
+      <div class="piece" id="x1"></div>
+      <div class="piece" id="x2"></div>
+      <div class="piece" id="x3"></div>
+    </div>
+    <div class="row">
+      <div class="piece" id="x4"></div>
+      <div class="piece" id="x5"></div>
+      <div class="piece" id="x6"></div>
+    </div>
+    <div class="row">
+      <div class="piece" id="x7"></div>
+      <div class="piece" id="x8"></div>
+      <div class="piece" id="x9"></div>
+    </div>
+  </div>
+  <p id="move-count">Moves: 0</p>
+  <p id="msg"></p>
+  <img id="celebration" src="res/celebration.gif" alt="celebration animatation"/>
+
+  <button id="reset" onclick="history.go(0);">Reset</button>
+
+  <script src="script.js" type="text/javascript"></script>
+
+</body>
+
+</html>

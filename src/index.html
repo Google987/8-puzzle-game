@@ -8,7 +8,10 @@
 </head>
 
 <body>
-
+  <div id="urlInput">
+    <input type="text" id="imageUrl" placeholder="Enter Image Url" size="50" />
+    <button id="submit">Submit</button>
+  </div>
   <div class="board">
     <div class="row">
       <div class="piece" id="x1"></div>
@@ -27,7 +30,7 @@
     </div>
   </div>
   <p id="move-count">Moves: 0</p>
-  <p id="msg"></p>
+  <p id="msg">Well, Done!!!! (Reset to play again)</p>
   <img id="celebration" src="res/celebration.gif" alt="celebration animatation"/>
 
   <button id="reset" onclick="history.go(0);">Reset</button>

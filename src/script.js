@@ -22,18 +22,34 @@ var validMoves = [
   [5, 7, 9],
   [6, 8]
 ];
-//var r = Array.from(d);
+
 var emptyBox = 9;
 var gameStarted = false;
 var moveCount = 0;
 var moveSnd = new Audio("res/tap.mp3");
 var errSnd = new Audio("res/error.mp3");
 var winSnd = new Audio("res/winner.mp3");
+var imageUrl = "res/color.jpg";
 
 document.addEventListener("DOMContentLoaded", reset);
 
 function reset() {
+  document.getElementById("submit").addEventListener("click", function () {
+    imageUrl = document.getElementById("imageUrl").value;
+    emptyBox = 9;
+    gameStarted = false;
+    moveCount = 0;
+    pieces.forEach((ele, i) => {
+      ele.style.background = 'url("' + imageUrl + '")';
+      ele.style.backgroundSize = "300px 300px";
+      ele.style.backgroundPosition = d[i];
+      if (i == 8) ele.style.background = "gray";
+    });
+    do100Moves(100);
+  });
   pieces.forEach((ele, i) => {
+    ele.style.background = 'url("' + imageUrl + '")';
+    ele.style.backgroundSize = "300px 300px";
     ele.style.backgroundPosition = d[i];
     if (i == 8) ele.style.background = "gray";
     ele.addEventListener("click", function () {
@@ -43,8 +59,8 @@ function reset() {
         if (gameStarted) {
           moveSnd.play();
           moveCount++;
-          if (checkWin()) celebrate();
           document.getElementById("move-count").innerText = "Moves: " + moveCount;
+          if (checkWin()) celebrate();
         }
       } else { errSnd.play(); }
     });
@@ -63,8 +79,7 @@ function do100Moves(num) {
 }
 
 function move(el, elId) {
-  pieces[emptyBox - 1].style.background =
-    'url("https://pbs.twimg.com/profile_images/1439909077111300104/BC-oP9Wk_400x400.jpg")';
+  pieces[emptyBox - 1].style.background = 'url("' + imageUrl + '")';
   pieces[emptyBox - 1].style.backgroundSize = "300px 300px";
   pieces[emptyBox - 1].style.backgroundPosition = el.style.backgroundPosition;
   el.style.background = "gray";
@@ -80,11 +95,10 @@ function checkWin() {
 }
 
 function celebrate() {
-  pieces[8].style.background =
-    'url("https://pbs.twimg.com/profile_images/1439909077111300104/BC-oP9Wk_400x400.jpg")';
+  pieces[8].style.background = 'url("' + imageUrl + '")';
   pieces[8].style.backgroundSize = "300px 300px";
   pieces[8].style.backgroundPosition = "left 400px top 400px";
-  document.getElementById("msg").innerText = "Well, Done!!!! (Reset to play again)";
+  document.getElementById("msg").style.display = "block";
   document.getElementById("celebration").style.display = "block";
   winSnd.play();
 }
